@@ -1,17 +1,21 @@
+// Game States:
+// "WIN" - Plater robot has defeated all enemy-robots
+//      * Fight all enemy-robots
+//      * Defeat each enemy-robot
+// "LOSE" - Player robot's health is zero or less
+
 // prompt player to enter a name & save as variable
 var playerName = window.prompt("What is your robot's name?");
 var playerHealth = 100;
 var playerAttack = 10;
 var playerMoney = 10;
 
-console.log(playerName, playerAttack, playerHealth);
-
-var enemyName = "Roborto";
+var enemyNames = ["Roborto", "Amy Android", "Robo Trumble"];
 var enemyHealth = 50;
 var enemyAttack = 12;
 
 // create a function named "fight"
-var fight = function () {
+var fight = function (enemyName) {
     window.alert("Welcome to Robot Gladiators!");
     
     // ask if the player wants to fight
@@ -72,4 +76,7 @@ var fight = function () {
 }
 
 // execute fight function
- fight();
+// fight();
+for(var i = 0; i < enemyNames.length; i++) {
+    fight(enemyNames[i]);
+}
